@@ -27,36 +27,13 @@
 <script setup>
 import { ref } from 'vue';
 
-// Données pour la section de base
 const counter = ref(0);
-const message = ref('');
-
-// Données pour la section avancée
-const uneString = ref('Hello');
-const submitted = ref(false);
-const clickCoords = ref({ x: 0, y: 0 });
-
-// Fonctions de la section de base
 function increment() {
     counter.value++;
 }
-function showMessage(msg) {
-    message.value = msg;
+
+function decrement() {
+    counter.value--;
 }
 
-// Fonctions de la section avancée
-function capterInput(event) {
-    console.log('event');
-    console.log(event);
-    uneString.value = event.target.value;
-}
-function capterClickEvent(event) {
-    console.log(event);
-    
-    clickCoords.value.x = event.clientX;
-    clickCoords.value.y = event.clientY;
-}
-function submitForm() {
-    submitted.value = true;
-}
 </script>
