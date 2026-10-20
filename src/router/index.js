@@ -59,6 +59,32 @@ const router = createRouter({
       path: "/tp-data-binding",
       component: () => import("../views/tp/tp-data-binding.vue"),
     },
+    {
+      path: "/:pathMatch(.*)*",
+      component: () => import("../views/not-found.vue"),
+    },
+    {
+      path: "/lesson-dynamic-style",
+      component: () => import("../views/lessons/lesson-dynamic-styling.vue"),
+    },
+    {
+      path: "/lesson-two-way-binding",
+      component: () => import("../views/lessons/lesson-two-way-binding.vue"),
+    },
+    {
+      path: "/lesson-conditional-rendering",
+      component: () =>
+        import("../views/lessons/lesson-conditional-rendering.vue"),
+    },
+    {
+      path: "/exercice-dynamic-styling",
+      component: () =>
+        import("../views/exercices/exercice-dynamic-styling.vue"),
+    },
+    {
+      path: "/tp-dynamic-styling",
+      component: () => import("../views/tp/tp-dynamic-styling.vue"),
+    },
   ],
 });
 export default router;
