@@ -57,7 +57,7 @@ const router = createRouter({
     },
     {
       path: "/tp-data-binding",
-      component: () => import("../views/exercices/tp-data-binding.vue"),
+      component: () => import("../views/tp/tp-data-binding.vue"),
     },
   ],
 });
