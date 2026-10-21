@@ -98,6 +98,10 @@ const router = createRouter({
       component: () =>
         import("../views/exercices/exercice-compteur-watcher.vue"),
     },
+    {
+      path: "/tp-reactivite",
+      component: () => import("../views/tp/tp-reactivite.vue"),
+    },
   ],
 });
 export default router;
