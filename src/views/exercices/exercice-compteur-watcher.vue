@@ -35,10 +35,10 @@ import { ref, watch } from "vue";
 const leNombre = ref(0);
 const increment = () => leNombre.value++;
 
-watch(leNombre, (newVal, oldVal) => {
+watch(leNombre, (newVal) => {
   //console.log(`Le compteur est passé de ${oldVal} à ${newVal}`);
   console.log("ça surveille");
-  if (leNombre.value === 7) {
+  if (newVal === 7) {
     console.log("Attention limite atteinte");
     leNombre.value = 0;
   }
