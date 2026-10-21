@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-base-100 shadow-xl w-full max-w-2xl mx-auto">
+  <div class="card bg-base-100 shadow-xl w-full max-w-3xl mx-auto">
     <div class="card-body">
       <h1 class="card-title">Event Binding Mode : Composition</h1>
 
@@ -11,7 +11,7 @@
           -
         </button>
 
-        <span class="text-xl font-bold">le nombre : {{counter }}</span>
+        <span class="text-xl font-bold">le nombre : {{ counter }}</span>
 
         <button
           @click="ajouter(10000)"
@@ -25,26 +25,23 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const counter = ref(0);
 
-const ajouter = (val) =>{
-  return counter.value += val;
-}
+const ajouter = (val) => {
+  return (counter.value += val);
+};
 
-const enlever = (val) =>{
-  return counter.value -= val;
-}
-
-
+const enlever = (val) => {
+  return (counter.value -= val);
+};
 
 function increment() {
-    counter.value++;
+  counter.value++;
 }
 
 function decrement() {
-    counter.value--;
+  counter.value--;
 }
-
 </script>

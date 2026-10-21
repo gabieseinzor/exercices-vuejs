@@ -85,6 +85,19 @@ const router = createRouter({
       path: "/tp-dynamic-styling",
       component: () => import("../views/tp/tp-dynamic-styling.vue"),
     },
+    {
+      path: "/exercice-v-if",
+      component: () => import("../views/exercices/exercice-v-if.vue"),
+    },
+    {
+      path: "/exercice-bug-computed",
+      component: () => import("../views/exercices/exercice-computed-bug.vue"),
+    },
+    {
+      path: "/exercice-compteur-watcher",
+      component: () =>
+        import("../views/exercices/exercice-compteur-watcher.vue"),
+    },
   ],
 });
 export default router;

@@ -48,7 +48,7 @@ import { ref } from "vue";
 function changeColor(event) {
   const card = event.currentTarget;
   card.style.backgroundColor =
-    card.style.backgroundColor === "blue" ? "deeppink" : "blue";
+  card.style.backgroundColor === "blue" ? "deeppink" : "blue";
 }
 const isCard3Active = ref(false);
 const isCard4Active = ref(false);
