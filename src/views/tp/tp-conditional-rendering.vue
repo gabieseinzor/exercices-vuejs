@@ -12,7 +12,15 @@
         type="text"
         placeholder="Ex : pommes (800 kg)"
         class="input input-bordered w-full"
+        @input="errorMessage = ''"
       />
+      <p
+        v-if="errorMessage"
+        class="rounded-box bg-red-100 text-red-700 border border-red-400 px-4 py-2 text-sm font-semibold"
+        role="alert"
+      >
+        {{ errorMessage }}
+      </p>
       <button
         type="button"
         class="btn btn-success text-white w-full sm:w-auto sm:self-start"
@@ -30,7 +38,12 @@
         </p>
 
         <ul v-else class="flex flex-col gap-2">
-          <li v-for="(item, index) in shoppingList" :key="index">
+          <li
+            v-for="(item, index) in shoppingList"
+            :key="index"
+            class="rounded-box bg-base-200 px-4 py-2 cursor-pointer transition hover:bg-red-100 hover:text-red-700"
+            @click="removeItem(index)"
+          >
             <span>{{ index }} - {{ item }}</span>
           </li>
         </ul>
@@ -53,21 +66,30 @@ import { ref } from "vue";
 
 // Texte tapé dans le champ (lié au v-model)
 const newItem = ref("");
-
 const shoppingList = ref([]);
+const errorMessage = ref("");
 
 // Liste visible ou masquée (utilisé par le v-show et le texte du bouton)
 const isListVisible = ref(true);
 
 // Ajoute le contenu du champ à la liste
 const addItem = () => {
-  shoppingList.value.push(newItem.value);
-  newItem.value = "";
+  if (newItem.value.trim() != "") {
+    shoppingList.value.push(newItem.value);
+    newItem.value = "";
+    errorMessage.value = "";
+  } else {
+    errorMessage.value = "Veuillez saisir un article avant d'ajouter.";
+  }
 };
-//console.log(shoppingList.value);
 
 // Masque ou affiche la liste de courses
 const showHideList = () => {
   return (isListVisible.value = !isListVisible.value);
+};
+
+// supprimer un element des ses courses
+const removeItem = (index) => {
+  shoppingList.value.splice(index, 1);
 };
 </script>
