@@ -102,6 +102,10 @@ const router = createRouter({
       path: "/tp-reactivite",
       component: () => import("../views/tp/tp-reactivite.vue"),
     },
+    {
+      path: "/exercice-lifecycle-api",
+      component: () => import("../views/exercices/exercice-lifecycle-api.vue"),
+    },
   ],
 });
 export default router;
