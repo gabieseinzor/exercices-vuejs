@@ -106,6 +106,10 @@ const router = createRouter({
       path: "/exercice-lifecycle-api",
       component: () => import("../views/exercices/exercice-lifecycle-api.vue"),
     },
+    {
+      path: "/tp-conditional-rendering",
+      component: () => import("../views/tp/tp-conditional-rendering.vue"),
+    },
   ],
 });
 export default router;
