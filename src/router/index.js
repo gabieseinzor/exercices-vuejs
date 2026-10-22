@@ -110,6 +110,10 @@ const router = createRouter({
       path: "/tp-conditional-rendering",
       component: () => import("../views/tp/tp-conditional-rendering.vue"),
     },
+    {
+      path: "/exercice-vuechartjs",
+      component: () => import("../views/exercices/exercice-vue-chartsjs.vue"),
+    },
   ],
 });
 export default router;
