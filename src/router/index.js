@@ -122,6 +122,11 @@ const router = createRouter({
       path: "/exercice-props",
       component: () => import("../views/exercices/exercice-props.vue"),
     },
+    {
+      path: "/exercice-lifecycle-api-props",
+      component: () =>
+        import("../views/exercices/exercice-lifecycle-api-props.vue"),
+    },
   ],
 });
 export default router;
