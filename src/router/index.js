@@ -114,6 +114,14 @@ const router = createRouter({
       path: "/exercice-vuechartjs",
       component: () => import("../views/exercices/exercice-vue-chartsjs.vue"),
     },
+    {
+      path: "/lesson-props",
+      component: () => import("../views/lessons/lesson-props.vue"),
+    },
+    {
+      path: "/exercice-props",
+      component: () => import("../views/exercices/exercice-props.vue"),
+    },
   ],
 });
 export default router;
