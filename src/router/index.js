@@ -127,6 +127,16 @@ const router = createRouter({
       component: () =>
         import("../views/exercices/exercice-lifecycle-api-props.vue"),
     },
+    {
+      path: "/tp-router-props",
+      component: () => import("../views/tp/tp-router-props.vue"),
+    },
+    {
+      path: "/details/:id/:name",
+      name: "details",
+      component: () => import("../views/tp/DetailsPage.vue"),
+      props: true,
+    },
   ],
 });
 export default router;
