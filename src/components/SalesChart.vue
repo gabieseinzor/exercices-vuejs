@@ -1,11 +1,8 @@
 <template>
   <div class="flex flex-col gap-4">
-    <!-- Zone du graphique : hauteur fixe, largeur fluide -->
     <div class="relative h-64 sm:h-80 w-full">
       <Bar :data="chartData" :options="chartOptions" />
     </div>
-
-    <!-- Boutons -->
     <div class="flex flex-col sm:flex-row gap-3">
       <button
         type="button"
@@ -64,6 +61,18 @@ const chartData = computed(() => ({
     },
   ],
 }));
+
+// options du graphique, dont le titre
+const chartOptions = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: {
+    title: {
+      display: true,
+      text: "Evolution des ventes par mois",
+    },
+  },
+};
 
 // ajoute 50 à la dernière vente (Mai)
 const addFifty = () => {
