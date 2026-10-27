@@ -7,9 +7,7 @@
         </h1>
 
         <ul class="flex flex-col divide-y divide-base-300">
-          <!-- À compléter : le v-for, avec sa key -->
           <UserProfileCard
-            class=""
             v-for="user in users"
             :key="user.id"
             :id="user.id"

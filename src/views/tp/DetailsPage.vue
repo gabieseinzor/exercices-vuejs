@@ -31,5 +31,14 @@
   </div>
 </template>
 <script setup>
-
+const props = defineProps({
+  id: {
+    type: String,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
+});
 </script>
