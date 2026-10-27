@@ -137,6 +137,10 @@ const router = createRouter({
       component: () => import("../views/tp/DetailsPage.vue"),
       props: true,
     },
+    {
+      path: "/exercice-emit",
+      component: () => import("../views/exercices/exercice-emit.vue"),
+    },
   ],
 });
 export default router;
