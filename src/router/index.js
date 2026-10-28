@@ -59,10 +59,7 @@ const router = createRouter({
       path: "/tp-data-binding",
       component: () => import("../views/tp/tp-data-binding.vue"),
     },
-    {
-      path: "/:pathMatch(.*)*",
-      component: () => import("../views/not-found.vue"),
-    },
+
     {
       path: "/lesson-dynamic-style",
       component: () => import("../views/lessons/lesson-dynamic-styling.vue"),
@@ -177,6 +174,10 @@ const router = createRouter({
     {
       path: "/confidentialite",
       component: () => import("../views/confidentialite.vue"),
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: () => import("../views/not-found.vue"),
     },
   ],
 });
