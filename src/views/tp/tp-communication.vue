@@ -7,7 +7,7 @@
     </h1>
     <ActiveUser :name="oneUser.name" :age="oneUser.age" />
 
-    <UserData @user-data-emit-update="updateUser()" />
+    <UserData @user-data-emit-update="updateUser" />
   </section>
 </template>
 <script setup>
