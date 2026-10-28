@@ -170,6 +170,14 @@ const router = createRouter({
       path: "/lesson-watchers",
       component: () => import("../views/lessons/lesson-watchers.vue"),
     },
+    {
+      path: "/mentions-legales",
+      component: () => import("../views/mentions-legales.vue"),
+    },
+    {
+      path: "/confidentialite",
+      component: () => import("../views/confidentialite.vue"),
+    },
   ],
 });
 export default router;
