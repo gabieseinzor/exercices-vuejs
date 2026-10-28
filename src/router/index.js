@@ -176,6 +176,10 @@ const router = createRouter({
       component: () => import("../views/confidentialite.vue"),
     },
     {
+      path: "/tp-communication",
+      component: () => import("../views/tp/tp-communication.vue"),
+    },
+    {
       path: "/:pathMatch(.*)*",
       component: () => import("../views/not-found.vue"),
     },

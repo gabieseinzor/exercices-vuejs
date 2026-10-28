@@ -86,5 +86,6 @@ const tps = [
   { label: "Réactivité", to: "/tp-reactivite" },
   { label: "Conditional rendering", to: "/tp-conditional-rendering" },
   { label: "Router + props", to: "/tp-router-props" },
+  { label: "Communication Composants", to: "/tp-communication" },
 ];
 </script>
