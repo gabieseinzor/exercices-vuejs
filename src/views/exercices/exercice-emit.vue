@@ -1,6 +1,7 @@
 <template>
   <div class="container mx-auto p-4 md:p-8">
     <div class="flex flex-col gap-4 max-w-md mx-auto">
+      <NewFriend @add-friend="handleAddFriend" />
       <OneFriendEmit
         v-for="unAmi in lesAmis"
         :key="unAmi.id"
@@ -19,6 +20,7 @@
 <script setup>
 import { ref } from "vue";
 import OneFriendEmit from "../../components/OneFriendEmit.vue";
+import NewFriend from "../../components/NewFriend.vue";
 
 const lesAmis = ref([
   {
@@ -75,5 +77,16 @@ function handlePremiumUpdate(unId) {
   if (unAmi) {
     unAmi.premium = !unAmi.premium;
   }
+}
+function handleAddFriend(newName, newPhone, newEmail) {
+  //console.log("Le parent a reçu :", newName, newPhone, newEmail);
+  const id = crypto.randomUUID();
+  lesAmis.value.push({
+    id: id,
+    name: newName,
+    phone: newPhone,
+    email: newEmail,
+    premium: false,
+  });
 }
 </script>
