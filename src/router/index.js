@@ -141,6 +141,35 @@ const router = createRouter({
       path: "/exercice-emit",
       component: () => import("../views/exercices/exercice-emit.vue"),
     },
+    {
+      path: "/lesson-event-binding",
+      component: () => import("../views/lessons/lesson-event-binding.vue"),
+    },
+    {
+      path: "/lesson-list-rendering",
+      component: () => import("../views/lessons/lesson-list-rendering.vue"),
+    },
+    {
+      path: "/lesson-computed-properties",
+      component: () =>
+        import("../views/lessons/lesson-computed-properties.vue"),
+    },
+    {
+      path: "/lesson-emit",
+      component: () => import("../views/lessons/lesson-emit.vue"),
+    },
+    {
+      path: "/lesson-lifecycle",
+      component: () => import("../views/lessons/lesson-lifecycle.vue"),
+    },
+    {
+      path: "/lesson-router",
+      component: () => import("../views/lessons/lesson-router.vue"),
+    },
+    {
+      path: "/lesson-watchers",
+      component: () => import("../views/lessons/lesson-watchers.vue"),
+    },
   ],
 });
 export default router;
