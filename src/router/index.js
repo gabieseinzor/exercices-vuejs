@@ -180,6 +180,10 @@ const router = createRouter({
       component: () => import("../views/tp/tp-communication.vue"),
     },
     {
+      path: "/tp-gestion-tickets",
+      component: () => import("../views/tp/tp-gestion-tickets.vue"),
+    },
+    {
       path: "/:pathMatch(.*)*",
       component: () => import("../views/not-found.vue"),
     },
