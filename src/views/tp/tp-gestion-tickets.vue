@@ -5,16 +5,14 @@
     <div class="stats w-full shadow">
       <div class="stat place-items-center">
         <div class="stat-title">Tickets affichés</div>
-        <!-- ici : le nombre de tickets affichés -->
         <div class="stat-value">{{ totalDisplayedTickets }}</div>
       </div>
       <div class="stat place-items-center">
         <div class="stat-title">Part de tickets "Urgent"</div>
-        <div class="stat-value text-error">33%</div>
+        <div class="stat-value text-error">{{ pourcentageHighPriority }}%</div>
       </div>
     </div>
 
-    <!-- Filtres -->
     <div class="grid gap-4 rounded-box bg-base-200 p-4 md:grid-cols-2">
       <label class="flex flex-col gap-1">
         <span class="font-semibold">Rechercher un ticket :</span>
@@ -51,7 +49,10 @@
         :priorite="ticket.priorite"
       />
 
-      <p class="py-6 text-center opacity-70">
+      <p
+        v-show="filteredTickets.length === 0"
+        class="py-6 text-center opacity-70"
+      >
         Aucun ticket ne correspond à votre recherche.
       </p>
     </div>
@@ -63,6 +64,8 @@ import { ref, computed } from "vue";
 import TicketCard from "../../components/TicketCard.vue";
 
 const searchedText = ref("");
+
+// Priorité choisie dans le menu déroulant ("" = toutes)
 const selectedPriority = ref("");
 
 // 1° Données initiales (Mock de tickets)
@@ -105,12 +108,15 @@ const tickets = ref([
   },
 ]);
 
+// Tickets filtrés par texte (titre) et par priorité
 const filteredTickets = computed(() => {
   return tickets.value.filter((ticket) => {
+    // Le titre contient le texte saisi (sans tenir compte des majuscules)
     const matchedText = ticket.titre
       .toLowerCase()
       .includes(searchedText.value.toLowerCase());
 
+    // Toutes les priorités, ou celle qui correspond au choix
     const matchedPriority =
       selectedPriority.value === "" ||
       ticket.priorite === selectedPriority.value;
@@ -119,5 +125,22 @@ const filteredTickets = computed(() => {
   });
 });
 
+// Nombre de tickets affichés après filtrage
 const totalDisplayedTickets = computed(() => filteredTickets.value.length);
+
+// Tickets affichés dont la priorité est "Haute"
+const highPriorityTickets = computed(() => {
+  return filteredTickets.value.filter((ticket) => ticket.priorite === "Haute");
+});
+
+// Part de tickets "Haute" parmi les tickets affichés, arrondie à l'entier inférieur (0 si la liste est vide)
+const pourcentageHighPriority = computed(() => {
+  if (totalDisplayedTickets.value !== 0) {
+    return Math.floor(
+      (highPriorityTickets.value.length / totalDisplayedTickets.value) * 100,
+    );
+  } else {
+    return 0;
+  }
+});
 </script>
